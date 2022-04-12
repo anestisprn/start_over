@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 def homepage(request):
     return render(request, 'main_app/homepage.html', {})
 
-
+#comment
 def sign_up_user(request):
     pass
 
