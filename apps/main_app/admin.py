@@ -4,3 +4,5 @@ from .models import *
 
 # this is an example !
 # admin.site.register(CustomUser)
+admin.site.register(EndUser)
+admin.site.register(TourGuide)

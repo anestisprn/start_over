@@ -5,17 +5,18 @@ import uuid
 #---- NEEDS TO REMAKE THE MODELS ----#
 
 
-class CustomUser(AbstractUser):
-    USER_TYPE_CHOICES = (
-        ('end_user', 'end_user'),
-        ('tour_guide', 'tour_guide'),
-        ('moderator', 'moderator'),
-    )
-    user_type = models.CharField(max_length=50,
-                                 choices=USER_TYPE_CHOICES, null=True)
+# class CustomUser(AbstractUser):
+#     USER_TYPE_CHOICES = (
+#         ('end_user', 'end_user'),
+#         ('tour_guide', 'tour_guide'),
+#         ('moderator', 'moderator'),
+#     )
+#     user_type = models.CharField(max_length=50,
+#                                  choices=USER_TYPE_CHOICES, null=True)
 
 
 class EndUser(models.Model):
+    # user = models.OneToOneField(CustomUser, unique=True, on_delete=models.CASCADE, null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     userFirstName = models.CharField(max_length=50)
     userLastName = models.CharField(max_length=50)
@@ -25,6 +26,7 @@ class EndUser(models.Model):
 
 
 class TourGuide(models.Model):
+    # user = models.OneToOneField(CustomUser, unique=True, on_delete=models.CASCADE, null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     guideFirstName = models.CharField(max_length=50)
     guideLastName = models.CharField(max_length=50)
@@ -33,6 +35,7 @@ class TourGuide(models.Model):
 
 
 class Moderator(models.Model):
+    # user = models.OneToOneField(CustomUser, unique=True, on_delete=models.CASCADE, null=True)
     isModerator = models.BooleanField(default=False)
 
 

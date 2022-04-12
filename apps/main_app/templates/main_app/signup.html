@@ -4,7 +4,7 @@
 
 {% block content %}
     <h2> sign up user: </h2>
-    {% if user.moderator.is_moderator %}
+
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -17,4 +17,5 @@
             <button type="reset" class="btn btn-secondary"> reset </button>
         </div>
     </form>
+
 {% endblock %}
