@@ -33,3 +33,41 @@ def get_user_ip(request):
 
 def contact(request):
     pass
+
+
+def create_user(request):
+    pass
+
+def read_user(request):
+    pass
+
+def edit_user(request):
+    pass
+
+def delete_user(request):
+    pass
+
+def create_guide(request):
+    pass
+
+def read_guide(request):
+    pass
+
+def edit_guide(request):
+    pass
+
+def delete_guide(request):
+    pass
+
+def create_activity(request):
+    pass
+
+def read_activity(request):
+    pass
+
+def edit_activity(request):
+    pass
+
+def delete_activity(request):
+    pass
+
