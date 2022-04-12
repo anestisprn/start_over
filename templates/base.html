@@ -21,7 +21,7 @@
     <nav class="border-bottom navbar-dark bg-dark text-decoration-none">
         <ul class="nav justify-content-center  nav-tabs">
             <li class="nav-item ">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="#">About Us</a>
@@ -29,14 +29,24 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
+            {% if user.is_active %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a>
+                <a class="nav-link" href="/signup/">Sign Up</a>
             </li>
+            {% endif %}
+
         </ul>
     </nav>
+    <i class="fa-solid fa-user text-success"><a class="text-warning">  {{ request.user.username }}</a></i>
+
+
     <main>
         {% block content %}
         

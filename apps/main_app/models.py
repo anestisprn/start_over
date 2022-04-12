@@ -19,8 +19,9 @@ class EndUser(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     userFirstName = models.CharField(max_length=50)
     userLastName = models.CharField(max_length=50)
-    user_registration = models.DateField(blank=False)
     userDateOfBirth = models.DateField()
+    userRegistration = models.DateField(blank=False)
+    isUser = models.BooleanField(default=False)
 
 
 class TourGuide(models.Model):
@@ -28,6 +29,11 @@ class TourGuide(models.Model):
     guideFirstName = models.CharField(max_length=50)
     guideLastName = models.CharField(max_length=50)
     guideDescription = models.TextField(max_length=300)
+    isGuide = models.BooleanField(default=False)
+
+
+class Moderator(models.Model):
+    isModerator = models.BooleanField(default=False)
 
 
 class TourExperience(models.Model):
