@@ -33,3 +33,6 @@ def get_user_ip(request):
 
 def contact(request):
     pass
+
+def edit_user(request):
+    pass

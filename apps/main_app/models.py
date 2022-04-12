@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 import uuid
+from django.db.models import IntegerField, Model
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 #---- NEEDS TO REMAKE THE MODELS ----#
-
 
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = (
@@ -34,7 +35,13 @@ class TourExperience(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     tourTitle = models.CharField(max_length=100)
     tourLocation = models.CharField(max_length=50)
-    tourDuration = models.IntegerField()
+    tourDuration = models.IntegerField(
+        default=1,
+        validators=[
+            MaxValueValidator(100),
+            MinValueValidator(1)
+        ]
+     )
     tourPrice = models.FloatField()
     tourAvailableDate = models.DateField()
     tourMaxNumberOfPeople = models.IntegerField()
