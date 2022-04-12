@@ -21,6 +21,11 @@ class EndUser(models.Model):
     userLastName = models.CharField(max_length=50)
     user_registration = models.DateField(blank=False)
     userDateOfBirth = models.DateField()
+    user = models.OneToOneField(
+        CustomUser, unique=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.userFirstName
 
 
 class TourGuide(models.Model):
@@ -28,6 +33,9 @@ class TourGuide(models.Model):
     guideFirstName = models.CharField(max_length=50)
     guideLastName = models.CharField(max_length=50)
     guideDescription = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.guideFirstName
 
 
 class TourExperience(models.Model):
@@ -40,3 +48,6 @@ class TourExperience(models.Model):
     tourMaxNumberOfPeople = models.IntegerField()
     tourDescription = models.TextField(max_length=300)
     tourGuide = models.ForeignKey(TourGuide, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tourTitle
