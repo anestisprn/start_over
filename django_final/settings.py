@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangofinal',
-        'USER': 'test1',
+        'USER': 'test',
         'PASSWORD': 'secret_1234',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -144,4 +144,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 AUTH_USER_MODEL = 'main_app.CustomUser'
